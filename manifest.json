@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Site Blocker",
+    "version": "1.0",
+    "description": "Allows only one specific site to run and blocks all others.",
+    "permissions": [
+      "tabs",
+      "webRequest",
+      "webRequestBlocking",
+      "notifications",
+      "*://*/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "*://*/*"
+    ]
+  }
+  
